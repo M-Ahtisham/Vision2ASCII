@@ -21,13 +21,6 @@ The project showcases key computer vision concepts like:
 - Save output as .txt or image screenshot
 - Simple graphical user interface (GUI)
 
-👥 Group Members:
---------------------------------------------------
-• Erbakan Ahmad (12306435)  
-• Jamal Dassrath (22301035)  
-• Love - (12306406)  
-• Muhammad Ahtisham Bhatti (22301502)
-
 💻 Technologies Used:
 --------------------------------------------------
 - Python

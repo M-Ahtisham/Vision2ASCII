@@ -322,12 +322,39 @@ class VideoProcessor(VideoProcessorBase):
         # Apply effects in logical order
         if effects['downscale']:
             processed = apply_downscale(processed, effects['downscale_percent'])
+            
         
         if effects['grayscale']:
             processed = apply_grayscale(processed)
             if processed.ndim == 2:
                 processed = cv2.cvtColor(processed, cv2.COLOR_GRAY2BGR)
-        
+            
+            # Send command to update the grayscale slider to 100%
+            js_code = """
+            <script>
+            const iframe = window.document.querySelector("iframe");
+            iframe.contentWindow.postMessage({
+                action: "setSlider",
+                sliderId: "grayscale",
+                value: 100
+            }, "*");
+            </script>
+            """
+            components.html(js_code)
+        else:
+            # Send command to reset the grayscale slider to 0%
+            js_code = """
+            <script>
+            const iframe = window.document.querySelector("iframe");
+            iframe.contentWindow.postMessage({
+                action: "setSlider",
+                sliderId: "grayscale",
+                value: 0
+            }, "*");
+            </script>
+            """
+            components.html(js_code)
+                
         if effects['blur']:
             processed = apply_blur(
                 processed, 
@@ -417,14 +444,16 @@ with st.sidebar:
             "Threshold Type", ["Binary", "Binary Inv", "Trunc", "To Zero", "To Zero Inv", "Otsu", "Triangle"]
         )
     
-    st.session_state.effects['morphology'] = st.checkbox("Morphology")
-    if st.session_state.effects['morphology']:
-        st.session_state.effects['morph_op'] = st.selectbox(
-            "Operation", list(MorphOperation)
-        )
-        st.session_state.effects['morph_ksize'] = st.slider(
-            "Kernel Size", 1, 15, 3, 2
-        )
+    # st.session_state.effects['morphology'] = st.checkbox("Morphology")
+    # if st.session_state.effects['morphology']:
+    #     st.session_state.effects['morph_op'] = st.selectbox(
+    #         "Operation", list(MorphOperation)
+    #     )
+    #     st.session_state.effects['morph_ksize'] = st.slider(
+    #         "Kernel Size", 1, 15, 3, 2
+    #     )
+
+
 
 # Main content area
 col1, col2 = st.columns(2)
@@ -442,6 +471,8 @@ with col2:
     st.subheader("Processed Video")
     components.iframe("http://localhost:8000/canvas.html", height=550, scrolling=True)
 
+
+components.iframe("http://localhost:8000/processing.html", height=550, scrolling=True)
 
 # Display current frame information
 if webrtc_ctx.state.playing and 'original_frame' in st.session_state:

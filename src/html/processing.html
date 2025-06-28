@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+            z-index: 9999; /* higher than everything else */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hide-everything {
+            display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            position: absolute !important;
+            clip: rect(0, 0, 0, 0) !important;
+        }
+        body {
+            transition: opacity ease-in 0.2s;
+        }
+
+        body[unresolved] {
+            opacity: 0;
+            display: block;
+            overflow: hidden;
+            position: relative;
+            background-color: #0D1116;
+        }
+
+        label.mb-0 {
+            color: white;
+        }
+        *{
+            background-color: #0D1116;
+        }
+        div{
+            background-color: #0D1116;
+        }
+
+    </style>
+    <script async="" type="text/javascript"
+        src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/cmp2.js"></script>
+    <script async="" type="text/javascript" src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/tag"></script>
+    <script async="" type="text/javascript" src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/f.txt"></script>
+    <script async="" type="text/javascript"
+        src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/prebid-9071b4120673144a696cbb8cdc7dfe7a.js"></script>
+    <script async=""
+        src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/829830077ee8f666007f0fc2e5c90c5c4f468fb55ce5caeb.bundle.js"></script>
+    <script async="" type="text/javascript"
+        src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/choice.js"></script>
+    <script async="" type="text/javascript"
+        src="https://cmp.quantcast.com/choice/teAXvqeG-gqVs/www.asciiart.eu/choice.js?tag_version=V2"></script>
+    <script type="text/javascript"
+        src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/___vscode_livepreview_injected_script"></script>
+    <style>
+        body {
+            transition: opacity ease-in 0.2s;
+        }
+
+        body[unresolved] {
+            opacity: 0;
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="copyright" content="Injosoft AB">
+    <meta name="abstract" content="ASCII Art">
+    <meta name="revisit-after" content="20 Days">
+
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script async="" type="text/javascript" src="https://cmp.quantcast.com/choice/teAXvqeG-gqVs/www.asciiart.eu/choice.js?tag_version=V2"></script><script type="text/javascript" async="true">
+        (function() {
+            var host = 'www.asciiart.eu';
+            var element = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            var url = 'https://cmp.quantcast.com'
+                .concat('/choice/', 'teAXvqeG-gqVs', '/', host, '/choice.js?tag_version=V2');
+            var uspTries = 0;
+            var uspTriesLimit = 3;
+            element.async = true;
+            element.type = 'text/javascript';
+            element.src = url;
+
+            firstScript.parentNode.insertBefore(element, firstScript);
+
+            function makeStub() {
+                var TCF_LOCATOR_NAME = '__tcfapiLocator';
+                var queue = [];
+                var win = window;
+                var cmpFrame;
+
+                function addFrame() {
+                    var doc = win.document;
+                    var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                    if (!otherCMP) {
+                        if (doc.body) {
+                            var iframe = doc.createElement('iframe');
+                            iframe.style.cssText = 'display:none';
+                            iframe.name = TCF_LOCATOR_NAME;
+                            doc.body.appendChild(iframe);
+                        } else {
+                            setTimeout(addFrame, 5);
+                        }
+                    }
+                    return !otherCMP;
+                }
+
+                function tcfAPIHandler() {
+                    var gdprApplies;
+                    var args = arguments;
+
+                    if (!args.length) {
+                        return queue;
+                    } else if (args[0] === 'setGdprApplies') {
+                        if (
+                            args.length > 3 &&
+                            args[2] === 2 &&
+                            typeof args[3] === 'boolean'
+                        ) {
+                            gdprApplies = args[3];
+                            if (typeof args[2] === 'function') {
+                                args[2]('set', true);
+                            }
+                        }
+                    } else if (args[0] === 'ping') {
+                        var retr = {
+                            gdprApplies: gdprApplies,
+                            cmpLoaded: false,
+                            cmpStatus: 'stub'
+                        };
+
+                        if (typeof args[2] === 'function') {
+                            args[2](retr);
+                        }
+                    } else {
+                        if(args[0] === 'init' && typeof args[3] === 'object') {
+                            args[3] = Object.assign(args[3], { tag_version: 'V2' });
+                        }
+                        queue.push(args);
+                    }
+                }
+
+                function postMessageEventHandler(event) {
+                    var msgIsString = typeof event.data === 'string';
+                    var json = {};
+
+                    try {
+                        if (msgIsString) {
+                            json = JSON.parse(event.data);
+                        } else {
+                            json = event.data;
+                        }
+                    } catch (ignore) {}
+
+                    var payload = json.__tcfapiCall;
+
+                    if (payload) {
+                        window.__tcfapi(
+                            payload.command,
+                            payload.version,
+                            function(retValue, success) {
+                                var returnMsg = {
+                                    __tcfapiReturn: {
+                                        returnValue: retValue,
+                                        success: success,
+                                        callId: payload.callId
+                                    }
+                                };
+                                if (msgIsString) {
+                                    returnMsg = JSON.stringify(returnMsg);
+                                }
+                                if (event && event.source && event.source.postMessage) {
+                                    event.source.postMessage(returnMsg, '*');
+                                }
+                            },
+                            payload.parameter
+                        );
+                    }
+                }
+
+                while (win) {
+                    try {
+                        if (win.frames[TCF_LOCATOR_NAME]) {
+                            cmpFrame = win;
+                            break;
+                        }
+                    } catch (ignore) {}
+
+                    if (win === window.top) {
+                        break;
+                    }
+                    win = win.parent;
+                }
+                if (!cmpFrame) {
+                    addFrame();
+                    win.__tcfapi = tcfAPIHandler;
+                    win.addEventListener('message', postMessageEventHandler, false);
+                }
+            };
+
+            makeStub();
+
+            var uspStubFunction = function() {
+                var arg = arguments;
+                if (typeof window.__uspapi !== uspStubFunction) {
+                    setTimeout(function() {
+                        if (typeof window.__uspapi !== 'undefined') {
+                            window.__uspapi.apply(window.__uspapi, arg);
+                        }
+                    }, 500);
+                }
+            };
+
+            var checkIfUspIsReady = function() {
+                uspTries++;
+                if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                    console.warn('USP is not accessible');
+                } else {
+                    clearInterval(uspInterval);
+                }
+            };
+
+            if (typeof window.__uspapi === 'undefined') {
+                window.__uspapi = uspStubFunction;
+                var uspInterval = setInterval(checkIfUspIsReady, 6000);
+            }
+        })();
+    </script>
+    <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script async="" src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/fuse.js"></script>
+    <link rel="stylesheet" href="./Webcam to ASCII Art_ Turn Your Stream into Art_files/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="preload" as="font" href="https://www.asciiart.eu/css/fonts/icomoon.woff2?l26wq5" type="font/woff2" crossorigin="anonymous">
+    <style>
+        @font-face {font-family: 'icomoon';font-display: swap;font-weight: normal;font-style: normal;src: url('/css/fonts/icomoon.woff2?l26wq5') format('woff2'),url('/css/fonts/icomoon.woff?l26wq5') format('woff'),url('/css/fonts/icomoon.ttf?l26wq5') format('truetype'),url('/css/fonts/icomoon.svg?l26wq5#icomoon') format('svg');}
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        //gtag('config', 'UA-68824650-9', { 'anonymize_ip': true });
+    </script>
+
+    <link rel="stylesheet" href="./Webcam to ASCII Art_ Turn Your Stream into Art_files/custom.css">
+    <link href="./Webcam to ASCII Art_ Turn Your Stream into Art_files/css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.asciiart.eu/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.asciiart.eu/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.asciiart.eu/favicon-16x16.png">
+    <link rel="manifest" href="https://www.asciiart.eu/site.webmanifest">
+    <link rel="mask-icon" href="https://www.asciiart.eu/safari-pinned-tab.svg" color="#0d47a1">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Transform webcam feeds into ASCII art. Customize with palettes, colors, fonts, effects &amp; more. Dive into a real-time ASCII experience!">
+    <meta name="keyword" content="webcam, stream, ascii art, realtime, save, png, jpg, txt, ansi, feed"><link rel="canonical" href="https://www.asciiart.eu/webcam-to-ascii">
+    <meta property="og:locale" content="sv_SE">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Webcam to ASCII Art: Turn Your Stream into Art">
+    <meta property="og:description" content="Transform webcam feeds into ASCII art. Customize with palettes, colors, fonts, effects &amp; more. Dive into a real-time ASCII experience!">
+    <meta property="og:url" content="https://www.asciiart.eu">
+    <meta property="og:site_name" content="Webcam to ASCII Art: Turn Your Stream into Art">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="www.asciiart.eu">
+    <meta name="twitter:description" content="Transform webcam feeds into ASCII art. Customize with palettes, colors, fonts, effects &amp; more. Dive into a real-time ASCII experience!">
+    <meta name="twitter:title" content="Webcam to ASCII Art: Turn Your Stream into Art">
+    <meta name="twitter:site" content="@ASCIIArtArchive">
+    <meta name="twitter:creator" content="@ASCIIArtArchive">
+
+    <style>
+        .content {color:#000000;background-color:#0D1116;;}.border-content {border-color: #8DA6CD !important;}.content a {color: #007bff;}.content a:hover {color: #0056b3;}.breadcrumb a {color: #007bff;}.content pre {color:#000000;}footer .social a {color:#b7b7b7;}.bg-header {background-color:#e8f1ff;}.border-header {border-color: #8DA6CD !important;}    </style>
+
+    <title>Webcam to ASCII Art: Turn Your Stream into Art</title>
+    <style type="text/css"> .qc-cmp-button.qc-cmp-secondary-button:hover {    background-color: #368bd6 !important;    border-color: transparent !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    color: #368bd6 !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    background-color: #eee !important;    border-color: transparent !important;  } </style><script type="text/javascript" id="__tcfapiuiscript" src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/cmp2ui-en.js"></script><style qc-data-emotion="css" data-s=""></style></head>
+<body style="overscroll-behavior-x: auto;">
+
+
+<div class="d-flex">
+    
+
+    <div class="content">
+        <div class="content header-line border-content border-top"></div>
+        <div class="hide-everything p-2 px-sm-4 pb-sm-4 text-center ascii-art-label">
+            <div class="text-truncate"><span>Turn your live webcam feed into captivating real-time ASCII art.</span></div>
+            <div class="bg-header border border-header rounded m-0 pb-2">
+                <pre class="p-0 m-0 text-dark">__        __   _                           _             _    ____   ____ ___ ___ 
+\ \      / /__| |__   ___ __ _ _ __ ___   | |_ ___      / \  / ___| / ___|_ _|_ _|
+ \ \ /\ / / _ \ '_ \ / __/ _` | '_ ` _ \  | __/ _ \    / _ \ \___ \| |    | | | | 
+  \ V  V /  __/ |_) | (_| (_| | | | | | | | || (_) |  / ___ \ ___) | |___ | | | | 
+   \_/\_/ \___|_.__/ \___\__,_|_| |_| |_|  \__\___/  /_/   \_\____/ \____|___|___|</pre>
+                            </div>
+            <nav aria-label="breadcrumb"><ol class="breadcrumb py-1 px-2 px-md-3 mt-2 mb-0 bg-header border border-header"><li class="breadcrumb-item"><a href="https://www.asciiart.eu/">Home</a></li><li class="breadcrumb-item"><a href="https://www.asciiart.eu/ascii-art-tools" title="ASCII Art Tools">ASCII Art Tools</a></li><li class="breadcrumb-item active" aria-current="page">Webcam to ASCII</li></ol></nav>        </div>
+        <div class="container">
+<style>
+    #output {
+        font-family: monospace;
+        font-size: 11px;
+        letter-spacing: 2px;
+        line-height: 10px;
+        background-color: black;
+    }
+    #canvas-container {
+        position: relative;
+        max-height: 400px;
+        border: 1px solid #23272f;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #0D1116;
+        box-shadow: 0 2px 16px #0006;
+        margin-bottom: 1.5rem;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(var(--bs-columns, 12), 1fr);
+        gap: .5rem 1.2rem;
+    }
+
+    .grid .g-col-12 {
+        grid-column: auto/span 12;
+    }
+
+    .flex-fill {
+        -ms-flex: 1 1 auto!important;
+        flex: 1 1 auto!important;
+    }
+    @media (min-width: 992px) {
+        .flex-lg-w300 {flex: 0 0 300px;}
+    }
+    @media (min-width: 1200px) {
+        .grid .g-col-xl-6 {grid-column: auto/span 6!important;}
+    }
+</style>
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        <div class="col">
+            <div id="camMessage" class="col alert alert-danger text-center d-none mt-2"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="p-2 bg-body-tertiary border rounded-3 mt-3">
+                <div class="d-flex flex-column flex-lg-row">
+                    <div class="flex-lg-w300 mr-lg-3 mb-4 mb-lg-0">
+                        <div id="canvas-container" class="mb-2">
+                            <canvas id="previewCanvas" width="300" height="225" class="d-block" style="margin: auto;"></canvas>
+                            <div class="text-center my-2 d-flex justify-content-center">
+                                <button id="preview-button" class="btn btn-primary btn-sm mr-2">Disable</button>
+                                <button id="flip-vertical" class="btn btn-primary btn-sm mr-2" title="Flip image vertical"><i class="icon-flip-vertical"></i></button>
+                                <button id="flip-horizontal" class="btn btn-primary btn-sm mr-2" title="Flip image horizontal"><i class="icon-flip-horizontal"></i></button>
+                                <button id="reset-filters" class="btn btn-primary btn-sm mr-2" title="Reset Filters">Reset Filters</button>
+                                <button id="savePreviewAsImage" class="btn btn-primary btn-sm" title="Save As PNG"><i class="icon-download"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-fill">
+                        <div class="grid">
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="asciiPalettes" class="text-nowrap mb-0" "="">ASCII Palettes</label>
+                                <select id="asciiPalettes" class="form-control form-control-sm ml-2">
+                                    <option value="blockelement">Single block</option>
+                                    <option value="solidblock">Solid block (instead of text)</option>
+                                    <option value="minimalist">Minimalist</option>
+                                    <option value="mediumset" selected="">Medium set</option>
+                                    <option value="longerset">Longer set</option>
+                                    <option value="fullset">Full set</option>
+                                    <option value="maxset">Max</option>
+                                    <option value="alphabetic">Alphabetic</option>
+                                    <option value="alphanumeric">Alphanumeric</option>
+                                    <option value="arrow">Arrow</option>
+                                    <option value="extended">Extended High</option>
+                                    <option value="math">Math Symbols</option>
+                                    <option value="numerical">Numerical</option>
+                                </select>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="colorMode" class="text-nowrap mb-0" "="">Color mode</label>
+                                <select id="colorMode" class="form-control form-control-sm ml-2">
+                                    <option value="colorful" selected="">Colorful</option>
+                                    <option value="grayscale">Grayscale</option>
+                                    <option value="black">Single color: Black font</option>
+                                    <option value="white">Single color: White font</option>
+                                    <option value="ansi16">ANSI 16-color</option>
+                                    <option value="ansi256">ANSI 256-color</option>
+                                </select>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="asciiWidth" class="mb-0">Characters</label>
+                                <input type="range" id="asciiWidth" min="20" max="300" value="75" class="custom-range flex-fill mx-2">
+                                <span id="asciiWidthValue" class="spanWidth">75</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="fontSize" class="text-nowrap mb-0">Font Size</label>
+                                <input type="range" id="fontSize" min="5" max="30" value="10" class="custom-range flex-fill mx-2">
+                                <span id="fontSizeValue" class="spanWidth">10</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="brightness" class="mb-0">Brightness</label>
+                                <input type="range" id="brightness" min="0" max="200" value="100" class="custom-range flex-fill mx-2">
+                                <span class="spanWidth"><span id="brightnessValue">100</span>%</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="contrast" class="mb-0">Contrast</label>
+                                <input type="range" id="contrast" min="0" max="200" value="100" class="custom-range flex-fill mx-2">
+                                <span class="spanWidth"><span id="contrastValue">100</span>%</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="saturation" class="mb-0">Saturation</label>
+                                <input type="range" id="saturation" name="saturation" min="0" max="400" value="100" class="custom-range flex-fill mx-2">
+                                <span class="spanWidth"><span id="saturationValue">100</span>%</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="hue" class="mb-0">Hue</label>
+                                <input type="range" id="hue" name="hue" min="0" max="360" value="0" class="custom-range flex-fill mx-2">
+                                <span class="spanWidth"><span id="hueValue">0</span>°</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="grayscale" class="mb-0">Grayscale</label>
+                                <input type="range" id="grayscale" name="grayscale" min="0" max="100" value="0" class="custom-range flex-fill mx-2">
+                                <span class="spanWidth"><span id="grayscaleValue">0</span>%</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="sepia" class="mb-0">Sepia</label>
+                                <input type="range" id="sepia" name="sepia" min="0" max="100" value="0" class="custom-range flex-fill mx-2">
+                                <span class="spanWidth"><span id="sepiaValue">0</span>%</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="invert" class="text-nowrap mb-0" "="">Invert Colors</label>
+                                <input type="range" id="invert" name="invert" min="0" max="100" value="0" class="custom-range flex-fill mx-2">
+                                <span class="spanWidth"><span id="invertValue">0</span>%</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="spaceDensity" class="text-nowrap mb-0" "="">Space Density</label>
+                                <input type="range" id="spaceDensity" name="spaceDensity" min="0" max="40" value="0" class="custom-range flex-fill mx-2">
+                                <span id="spaceDensityValue" class="spanWidth">0</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="useSharpness" class="text-nowrap mb-0" "=""><input type="checkbox" id="useSharpness" name="use-sharpen"> Sharpness</label>
+                                <input type="range" id="sharpness" name="sharpness" min="6" max="15" value="9" step="0.1" class="custom-range flex-fill mx-2" disabled="">
+                                <span id="sharpnessValue" class="spanWidth">9</span>
+                            </div>
+                            <div class="g-col-12 g-col-xl-6 d-flex align-self-center">
+                                <label for="useEdgeDetection" class="text-nowrap mb-0" "=""><input type="checkbox" id="useEdgeDetection" name="useEdgeDetection"> Edge Detection</label>
+                                <input type="range" id="edgeDetection" name="edgeDetection" min="0" max="2" value="1" step="0.1" class="custom-range flex-fill mx-2" disabled="">
+                                <span id="edgeDetectionValue" class="spanWidth">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center mt-3">
+            <div class="card rounded-4 shadow-lg" style="background: #181c24; border: none;">
+                <div class="card-body text-center p-4" style="overflow-y: auto; overflow-x: auto; background: #181c24;">
+                    <canvas id="output" style="image-rendering: pixelated; image-rendering: crisp-edges; background: #0D1116; border-radius: 12px; box-shadow: 0 2px 16px #0004;" width="708" height="526"></canvas>
+                    <div id="outputText" style="display:none;"></div>
+                </div>
+                <div class="card-footer d-flex flex-wrap justify-content-center gap-2" style="background: #181c24; border-top: 1px solid #23272f;">
+                    <button id="fullscreen" class="btn btn-light fw-bold rounded-pill px-4 mx-1 my-1" style="background: #fff; color: #0D1116; border: none;">Show Fullscreen</button>
+                    <button id="btn-clipboard" class="btn btn-light fw-bold rounded-pill px-4 mx-1 my-1 btn-clipboard" data-clipboard-target="#outputText" style="background: #fff; color: #0D1116; border: none; min-width: 165px;">Copy to Clipboard</button>
+                    <div id="saveAs" class="dropdown mx-1 my-1">
+                        <button class="btn btn-light fw-bold rounded-pill px-4 dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" style="background: #fff; color: #0D1116; border: none;">
+                            Save as
+                        </button>
+                        <div class="dropdown-menu bg-dark border-0 shadow rounded-3" style="background: #23272f;">
+                            <button id="saveAsANSI" class="dropdown-item text-white" type="button" data-saveas="ansi" disabled="" style="background: transparent;">ANSI (.ans)</button>
+                            <button class="dropdown-item text-white" type="button" data-saveas="txt" style="background: transparent;">ASCII Art (.txt)</button>
+                            <button class="dropdown-item text-white" type="button" data-saveas="html" style="background: transparent;">HTML (.html)</button>
+                        </div>
+                    </div>
+                    <div id="saveAsImage" class="dropdown mx-1 my-1">
+                        <button class="btn btn-light fw-bold rounded-pill px-4 dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" style="background: #fff; color: #0D1116; border: none;">
+                            Save as Image
+                        </button>
+                        <div class="dropdown-menu bg-dark border-0 shadow rounded-3" style="background: #23272f;">
+                            <button class="dropdown-item text-white" type="button" data-saveas="png" style="background: transparent;">PNG</button>
+                            <button class="dropdown-item text-white" type="button" data-saveas="jpg" style="background: transparent;">JPG</button>
+                            <button class="dropdown-item text-white" type="button" data-saveas="gif" style="background: transparent;">GIF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                body {
+                    background: #0D1116 !important;
+                    color: #fff !important;
+                }
+                .card, .card-body, .card-footer {
+                    background: #181c24 !important;
+                    color: #fff !important;
+                }
+                .btn-light, .btn.btn-light {
+                    background: #fff !important;
+                    color: #0D1116 !important;
+                    border: none !important;
+                    font-weight: 600;
+                    transition: background 0.2s, color 0.2s;
+                }
+                .btn-light:hover, .btn.btn-light:hover {
+                    background: #e2e6ea !important;
+                    color: #0D1116 !important;
+                }
+                .dropdown-menu {
+                    background: #23272f !important;
+                    border: none !important;
+                    box-shadow: 0 2px 16px #0006;
+                }
+                .dropdown-item {
+                    color: #fff !important;
+                    font-weight: 500;
+                    border-radius: 6px;
+                    margin: 2px 0;
+                }
+                .dropdown-item:hover, .dropdown-item:focus {
+                    background: #31363f !important;
+                    color: #fff !important;
+                }
+                .btn-clipboard:active, .btn-clipboard:focus {
+                    background: #e2e6ea !important;
+                    color: #0D1116 !important;
+                }
+                .rounded-pill {
+                    border-radius: 50rem !important;
+                }
+                .gap-2 {
+                    gap: 0.5rem !important;
+                }
+            </style>
+            
+            
+        </div>
+    </div>
+    <script src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/clipboard.min.js"></script>
+    <script>
+        class AsciiExport{constructor(e="ascii-art"){this.fileName=e}utf8Encoder(e){let t=new TextEncoder;return t.encode(e)}stringToOEMUS(e){let t={"█":219},i=new Uint8Array(e.length);for(let a=0;a<e.length;a++){let s=e[a];128>s.charCodeAt(0)?i[a]=s.charCodeAt(0):void 0!==t[s]?i[a]=t[s]:i[a]=63}return i}saveAsTextFile(e,t="txt",i="text/plain"){let a=null;if("ans"===t){let s=this.stringToOEMUS(e);a=new Blob([s],{type:"application/octet-stream"})}else{let n=this.utf8Encoder(e);a=new Blob([n],{type:i})}let l=URL.createObjectURL(a),r=document.createElement("a");r.href=l,r.download=`${this.fileName}.${t}`,document.body.appendChild(r),r.click(),document.body.removeChild(r),URL.revokeObjectURL(l)}saveAsHtmlFile(e){this.saveAsTextFile('<div style="font-family: monospace;">'+e+"</div>","html","text/html")}saveAsAnsiFile(e){this.saveAsTextFile(e,"ans","text/plain")}saveAsImage(e,t="png"){let i=e.toDataURL(`image/${t}`),a=document.createElement("a");a.href=i,a.download=`${this.fileName}.${t}`,document.body.appendChild(a),a.click(),document.body.removeChild(a)}}class WebcamToCanvas{static COLOR_MODES={grayscale:1,colorful:2,black:3,white:4,ansi16:5,ansi256:6};static ASCII_PALETTES={blockelement:"█",solidblock:"█",minimalist:"#+-.",mediumset:"@%#8*+=-:,.",longerset:"$@B%8&WM#*oa*+=-:,.",fullset:"$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft?+~i!lI;:,^`'.",maxset:"\xc6\xd1\xcaŒ\xd8M\xc9\xcb\xc8\xc3\xc2WQB\xc5\xe6#N\xc1\xfeE\xc4\xc0HKRŽœXg\xd0\xeaq\xdbŠ\xd5\xd4A€\xdfpm\xe3\xe2G\xb6\xf8\xf0\xe98\xda\xdc$\xebd\xd9\xfd\xe8\xd3\xde\xd6\xe5\xff\xd2b\xa5FD\xf1\xe1ZP\xe4š\xc7\xe0h\xfb\xa7\xddkŸ\xaeS9žUTe6\xb5Oyx\xce\xbef4\xf55\xf4\xfa&a\xfc™2\xf9\xe7w\xa9Y\xa30V\xcdL\xb13\xcf\xcc\xf3C@n\xf6\xf2s\xa2u‰\xbd\xbc‡zJƒ%\xa4Itoc\xeerjv1l\xed=\xef\xec<>i7†[\xbf?\xd7}*{+()/\xbb\xab•\xac|!\xa1\xf7\xa6\xaf—^\xaa„”“~\xb3\xba\xb2–\xb0\xad\xb9‹›;:’‘‚’˜ˆ\xb8…\xb7\xa8\xb4`",numerical:"0896452317",extended:"@%#{}[]()<>^*+=~-:.",math:"π≠\xf7√=≈∞+\xd7-",arrow:"↑↗→↘↓↙←↖",alphabetic:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",alphanumeric:"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz"};constructor(e,t,i,a,s,n,l,r,h,o,c,d,u,v,C){if(this.asciiWidth=s,this.spaceDensity=C,this.useSolidblock="solidblock"===n,this.characters=WebcamToCanvas.ASCII_PALETTES[n]+" ".repeat(this.spaceDensity),this.currentMode=WebcamToCanvas.COLOR_MODES[l],this.fontSize=i,this.fontName=a,this.brightness=r,this.contrast=h,this.saturation=o,this.hue=c,this.grayscale=d,this.sepia=u,this.invert=v,this.edgeDetection=1,this.sharpness=9,this.invertEdgeColors=!0,this.useEdgeDetection=!1,this.useSharpness=!1,this.usePreview=!0,this.drawPreviewDisabled=!1,this.precalculateAsciiLookup(),!this.initializeCanvasElements(e,t))return;this.initializewebcamCanvas(),this.initializeCharMetrics(),this.initializeWebcam(),this.bindAsciiWidthListener()}initializeCanvasElements(e,t){return(this.previewCanvas=document.getElementById(e),this.outputCanvas=document.getElementById(t),this.offscreenCanvas=new OffscreenCanvas(0,0),this.previewCanvas&&this.outputCanvas)?(this.offscreenCtx=this.offscreenCanvas.getContext("2d",{alpha:!1}),this.outputCtx=this.outputCanvas.getContext("2d",{alpha:!1}),this.setOutputContextFont(),this.previewCanvas.width=300,this.previewCanvas.height=225,this.previewCtx=this.previewCanvas.getContext("2d",{willReadFrequently:!0,alpha:!1}),this.previewCtx.font="18px Arial",this.previewCtx.fillStyle="rgb(0, 255, 0)",this.previewCtx.fillText("No connection",100,120),!0):(this.displayErrorMessage("Element(s) not found."),!1)}initializewebcamCanvas(){this.webcamCanvas=document.createElement("canvas"),this.webcamCtx=this.webcamCanvas.getContext("2d",{willReadFrequently:!0,alpha:!1}),this.webcamCanvas.style.display="none",document.body.appendChild(this.webcamCanvas)}initializeCharMetrics(){let e=this.characters.trim(),t=this.outputCtx.measureText(e);this.charWidth=Math.abs(t.actualBoundingBoxRight-t.actualBoundingBoxLeft)/e.length,this.charHeight=Math.abs(t.actualBoundingBoxAscent)+Math.abs(t.actualBoundingBoxDescent)}async initializeWebcam(){try{this.clearCanvas(),this.previewCtx.fillText("Connecting",100,120);let e=await navigator.mediaDevices.getUserMedia({video:!0,audio:!1});this.videoElement=document.createElement("video"),this.videoElement.style.display="none",this.videoElement.autoplay=!0,document.body.appendChild(this.videoElement),this.videoElement.srcObject=e,this.videoElement.onloadedmetadata=e=>this.setupCanvasDrawing(!0)}catch(t){this.clearCanvas(),this.previewCtx.fillText("Failed to connect",100,120),console.error("Error accessing the webcam:",t),this.displayErrorMessage("Error accessing the webcam.")}}resetEffects(){this.asciiWidth=75,this.fontSize=10,this.spaceDensity=0,this.useSolidblock=!1,this.characters=WebcamToCanvas.ASCII_PALETTES.mediumset+" ".repeat(this.spaceDensity),this.currentMode=WebcamToCanvas.COLOR_MODES.colorful,this.brightness=100,this.contrast=100,this.saturation=100,this.hue=0,this.grayscale=0,this.sepia=0,this.invert=0,this.edgeDetection=1,this.sharpness=9,this.invertEdgeColors=!0,this.useEdgeDetection=!1,this.useSharpness=!1,this.webcamCtx.setTransform(1,0,0,1,0,0),this.previewCtx.setTransform(1,0,0,1,0,0),this.precalculateAsciiLookup(),this.setOutputContextFont(),this.initializeCharMetrics(),this.setupCanvasDrawing()}setOutputContextFont(){this.outputCtx.font=`${this.fontSize}px ${this.fontName}`,this.outputCtx.imageSmoothingEnabled=!0,this.outputCtx.fontKerning="none",this.outputCtx.textAlign="start",this.outputCtx.textBaseline="top",this.outputCtx.textRendering="optimizeSpeed",this.offscreenCtx.font=`${this.fontSize}px ${this.fontName}`,this.offscreenCtx.imageSmoothingEnabled=!0,this.offscreenCtx.fontKerning="none",this.offscreenCtx.textAlign="start",this.offscreenCtx.textBaseline="top",this.offscreenCtx.textRendering="optimizeSpeed"}clearCanvas(){this.previewCtx.clearRect(0,0,this.previewCanvas.width,this.previewCanvas.height)}setupCanvasDrawing(e=!1){let t=this.videoElement.videoWidth/this.videoElement.videoHeight,i=300/t;this.previewCanvas.width=300,this.previewCanvas.height=i;let a=this.asciiWidth*this.charWidth,s=a/t,n=Math.floor(s/this.charHeight);if(s=n*this.charHeight,this.webcamCanvas.width=this.asciiWidth,this.webcamCanvas.height=n,this.offscreenCanvas.width=a,this.offscreenCanvas.height=s,this.outputCanvas.width=a,this.outputCanvas.height=s,this.setOutputContextFont(),e){let l=()=>{this.usePreview?(this.previewCtx.drawImage(this.videoElement,0,0,300,i),this.previewCtx.filter=`brightness(${this.brightness}%)`,this.previewCtx.filter+=` contrast(${this.contrast}%)`,this.previewCtx.filter+=` saturate(${this.saturation}%)`,this.previewCtx.filter+=` hue-rotate(${this.hue}deg)`,this.previewCtx.filter+=` grayscale(${this.grayscale}%)`,this.previewCtx.filter+=` sepia(${this.sepia}%)`,this.previewCtx.filter+=` invert(${this.invert}%)`,this.useEdgeDetection&&this.applyEdgeDetection(this.previewCtx,this.previewCanvas),this.useSharpness&&this.applySharpness(this.previewCtx,this.previewCanvas,this.sharpness)):this.drawPreviewDisabled&&(this.clearCanvas(),this.previewCtx.font="18px Arial",this.previewCtx.fillStyle="rgb(0, 255, 0)",this.previewCtx.fillText("Disabled",120,120),this.drawPreviewDisabled=!1),this.webcamCtx.drawImage(this.videoElement,0,0,this.webcamCanvas.width,this.webcamCanvas.height),this.webcamCtx.filter=`brightness(${this.brightness}%)`,this.webcamCtx.filter+=` contrast(${this.contrast}%)`,this.webcamCtx.filter+=` saturate(${this.saturation}%)`,this.webcamCtx.filter+=` hue-rotate(${this.hue}deg)`,this.webcamCtx.filter+=` grayscale(${this.grayscale}%)`,this.webcamCtx.filter+=` sepia(${this.sepia}%)`,this.webcamCtx.filter+=` invert(${this.invert}%)`,this.useEdgeDetection&&this.applyEdgeDetection(this.webcamCtx,this.webcamCanvas),this.useSharpness&&this.applySharpness(this.webcamCtx,this.webcamCanvas,this.sharpness),requestAnimationFrame(l)};l(),this.renderLoop()}}applyEdgeDetection(e,t){let i=e.getImageData(0,0,t.width,t.height),a=i.data,s=i.width,n=i.height,l=new Uint8ClampedArray(a.length),r=[-1,0,1,-2,0,2,-1,0,1],h=[-1,-2,-1,0,0,0,1,2,1];for(let o=0;o<n;o++)for(let c=0;c<s;c++){let d=0,u=0;if(0===c||0===o||c===s-1||o===n-1){let v=(o*s+c)*4;l[v]=l[v+1]=l[v+2]=255,l[v+3]=255;continue}for(let C=-1;C<=1;C++)for(let g=-1;g<=1;g++){let $=((o+C)*s+(c+g))*4,m=.3*a[$]+.59*a[$+1]+.11*a[$+2];d+=m*r[(C+1)*3+(g+1)],u+=m*h[(C+1)*3+(g+1)]}let p=Math.sqrt(d*d+u*u)*this.edgeDetection|0,E=this.invertEdgeColors?255-p:p,_=(o*s+c)*4;l[_]=l[_+1]=l[_+2]=E,l[_+3]=255}let b=new ImageData(l,s,n);e.putImageData(b,0,0)}applySharpness(e,t,i){let a=e.getImageData(0,0,t.width,t.height),s=a.data,n=a.width,l=[-1,-1,-1,-1,i,-1,-1,-1,-1],r=l.length,h=Math.sqrt(r),o=Math.floor(h/2),c=new Uint8ClampedArray(s.length);for(let d=0;d<a.height;d++)for(let u=0;u<a.width;u++){let v=0,C=0,g=0;for(let $=0;$<h;$++)for(let m=0;m<h;m++){let p=d+$-o,E=u+m-o;if(p>=0&&p<a.height&&E>=0&&E<a.width){let _=(p*n+E)*4;v+=s[_]*l[$*h+m],C+=s[_+1]*l[$*h+m],g+=s[_+2]*l[$*h+m]}}let b=(d*n+u)*4;c[b]=v,c[b+1]=C,c[b+2]=g,c[b+3]=s[b+3]}let w=new ImageData(c,a.width,a.height);e.putImageData(w,0,0)}static ANSI16_COLORS=[[0,0,0],[128,0,0],[0,128,0],[128,128,0],[0,0,128],[128,0,128],[0,128,128],[192,192,192],[128,128,128],[255,0,0],[0,255,0],[255,255,0],[0,0,255],[255,0,255],[0,255,255],[255,255,255]];static get ANSI256_COLORS(){let e=[];e.push(...[[0,0,0],[128,0,0],[0,128,0],[128,128,0],[0,0,128],[128,0,128],[0,128,128],[192,192,192],[128,128,128],[255,0,0],[0,255,0],[255,255,0],[0,0,255],[255,0,255],[0,255,255],[255,255,255]]);for(let t=0;t<6;t++)for(let i=0;i<6;i++)for(let a=0;a<6;a++)e.push([t?42*t+55:0,i?42*i+55:0,a?42*a+55:0]);for(let s=0;s<24;s++){let n=8+10*s;e.push([n,n,n])}return e}findClosestAnsiColor(e,t,i,a){let s=1/0,n;for(let l of a){let r=Math.sqrt((e-l[0])**2+(t-l[1])**2+(i-l[2])**2);r<s&&(s=r,n=l)}return n}getAnsiIndexFromRgb(e,t,i,a){for(let s=0;s<a.length;s++){let n=a[s];if(n[0]===e&&n[1]===t&&n[2]===i)return s}return -1}renderLoop(){window.requestAnimationFrame(()=>this.renderLoop());let e=new Uint8ClampedArray(this.webcamCtx.getImageData(0,0,this.webcamCanvas.width,this.webcamCanvas.height).data);this.offscreenCtx.clearRect(0,0,this.outputCanvas.width,this.outputCanvas.height),(this.currentMode==WebcamToCanvas.COLOR_MODES.black||this.currentMode==WebcamToCanvas.COLOR_MODES.white)&&(this.offscreenCtx.fillStyle=this.currentMode==WebcamToCanvas.COLOR_MODES.black?"white":"black",this.offscreenCtx.fillRect(0,0,this.outputCanvas.width,this.outputCanvas.height));let t={[WebcamToCanvas.COLOR_MODES.colorful]:(e,t,i)=>`rgb(${e}, ${t}, ${i})`,[WebcamToCanvas.COLOR_MODES.grayscale]:e=>`rgb(${e}, ${e}, ${e})`,[WebcamToCanvas.COLOR_MODES.black]:()=>"black",[WebcamToCanvas.COLOR_MODES.white]:()=>"white",[WebcamToCanvas.COLOR_MODES.ansi16]:(e,t,i)=>{let[a,s,n]=this.findClosestAnsiColor(e,t,i,WebcamToCanvas.ANSI16_COLORS);return`rgb(${a}, ${s}, ${n})`},[WebcamToCanvas.COLOR_MODES.ansi256]:(e,t,i)=>{let[a,s,n]=this.findClosestAnsiColor(e,t,i,WebcamToCanvas.ANSI256_COLORS);return`rgb(${a}, ${s}, ${n})`}},i=null,a=0;for(let s=0;s<this.webcamCanvas.height;s++)for(let n=0;n<this.webcamCanvas.width;n++){let l=e[a],r=e[a+1],h=e[a+2],o=Math.floor((l+r+h)/3),c=this.asciiLookup[o],d=t[this.currentMode]||t[WebcamToCanvas.COLOR_MODES.black],u=this.currentMode===WebcamToCanvas.COLOR_MODES.colorful||this.currentMode===WebcamToCanvas.COLOR_MODES.ansi16||this.currentMode===WebcamToCanvas.COLOR_MODES.ansi256?d(l,r,h):d(o);u!==i&&(this.offscreenCtx.fillStyle=u,i=u),this.useSolidblock?this.offscreenCtx.fillRect(n*this.charWidth,s*this.charHeight,this.charWidth,this.charHeight):this.offscreenCtx.fillText(c,n*this.charWidth,s*this.charHeight),a+=4}this.outputCtx.drawImage(this.offscreenCanvas,0,0),this.capturer&&this.capturer.capture(this.outputCanvas)}getAsciiArt(e="auto"){let t=new Uint8ClampedArray(this.webcamCtx.getImageData(0,0,this.webcamCanvas.width,this.webcamCanvas.height).data);"auto"===e&&(e=this.currentMode===WebcamToCanvas.COLOR_MODES.black||this.currentMode===WebcamToCanvas.COLOR_MODES.white?"txt":"html");let i={[WebcamToCanvas.COLOR_MODES.colorful]:(e,t,i)=>`rgb(${e}, ${t}, ${i})`,[WebcamToCanvas.COLOR_MODES.grayscale]:e=>`rgb(${e}, ${e}, ${e})`,[WebcamToCanvas.COLOR_MODES.black]:()=>"black",[WebcamToCanvas.COLOR_MODES.white]:()=>"white"},a=null,s="",n=0;for(let l=0;l<this.webcamCanvas.height;l++){"html"===e&&(s+="<div>");for(let r=0;r<this.webcamCanvas.width;r++){let h=t[n],o=t[n+1],c=t[n+2],d=Math.floor((h+o+c)/3),u=this.asciiLookup[d];if(" "===u&&(u="&nbsp;"),"ans"===e&&(this.currentMode===WebcamToCanvas.COLOR_MODES.ansi16||this.currentMode===WebcamToCanvas.COLOR_MODES.ansi256)){let[v,C,g]=this.findClosestAnsiColor(h,o,c,this.currentMode===WebcamToCanvas.COLOR_MODES.ansi16?WebcamToCanvas.ANSI16_COLORS:WebcamToCanvas.ANSI256_COLORS),$=this.getAnsiIndexFromRgb(v,C,g,this.currentMode===WebcamToCanvas.COLOR_MODES.ansi16?WebcamToCanvas.ANSI16_COLORS:WebcamToCanvas.ANSI256_COLORS),m=`\x1b[38;5;${$}m`;m!==a&&(s+=m,a=m),s+=u}else if("html"===e){let p=i[this.currentMode]||i[WebcamToCanvas.COLOR_MODES.black],E=this.currentMode===WebcamToCanvas.COLOR_MODES.colorful?p(h,o,c):p(d);E!==a&&(a=E),u=`<span style="color:${E};">${u}</span>`}else s+=u;n+=4}"html"===e&&(s+="</div>"),s+="\n"}return"ansi"===e&&(s+="\x1b[0m"),s}precalculateAsciiLookup(){this.asciiLookup=Array(256);for(let e=0;e<=255;e++)this.asciiLookup[e]=this.characters.charAt(this.mapColorToAscii(e,255,0,0,this.characters.length-1))}mapColorToAscii(e,t,i,a,s){return this.interpolate(this.normalize(e,t,i),a,s)}normalize(e,t,i){return(e-t)/(i-t)}interpolate(e,t,i){return t+(i-t)*e}displayErrorMessage(e){let t=document.getElementById("camMessage");t.innerHTML=e,t.classList.remove("d-none")}bindAsciiWidthListener(){let e=document.getElementById("asciiWidth");e.addEventListener("change",e=>{this.asciiWidth=parseInt(e.target.value,10),this.setupCanvasDrawing()});let t=document.getElementById("fontSize");t.addEventListener("change",e=>{this.fontSize=parseInt(e.target.value,10),this.setOutputContextFont(),this.initializeCharMetrics(),this.setupCanvasDrawing()});let i=document.getElementById("brightness");i.addEventListener("change",e=>{this.brightness=parseInt(e.target.value,10)});let a=document.getElementById("contrast");a.addEventListener("change",e=>{this.contrast=parseInt(e.target.value,10)});let s=document.getElementById("saturation");s.addEventListener("change",e=>{this.saturation=parseInt(e.target.value,10)});let n=document.getElementById("hue");n.addEventListener("change",e=>{this.hue=parseInt(e.target.value,10)});let l=document.getElementById("grayscale");l.addEventListener("change",e=>{this.grayscale=parseInt(e.target.value,10)});let r=document.getElementById("sepia");r.addEventListener("change",e=>{this.sepia=parseInt(e.target.value,10)});let h=document.getElementById("invert");h.addEventListener("change",e=>{this.invert=parseInt(e.target.value,10)});let o=document.getElementById("useSharpness");o.addEventListener("change",e=>{this.useSharpness=e.target.checked});let c=document.getElementById("sharpness");c.addEventListener("change",e=>{this.sharpness=e.target.value});let d=document.getElementById("useEdgeDetection");d.addEventListener("change",e=>{this.useEdgeDetection=e.target.checked});let u=document.getElementById("edgeDetection");u.addEventListener("change",e=>{this.edgeDetection=e.target.value});let v=document.getElementById("spaceDensity");v.addEventListener("change",e=>{this.spaceDensity=parseInt(e.target.value,10),this.characters=WebcamToCanvas.ASCII_PALETTES[C.value]+" ".repeat(this.spaceDensity),this.precalculateAsciiLookup()});let C=document.getElementById("asciiPalettes");C.addEventListener("change",e=>{this.useSolidblock="solidblock"===C.value,this.characters=WebcamToCanvas.ASCII_PALETTES[C.value]+" ".repeat(this.spaceDensity),this.precalculateAsciiLookup(),this.setOutputContextFont(),this.initializeCharMetrics(),this.setupCanvasDrawing()});let g=document.getElementById("colorMode");g.addEventListener("change",e=>{this.currentMode=WebcamToCanvas.COLOR_MODES[g.value],this.precalculateAsciiLookup(),"ansi16"==g.value||"ansi256"==g.value?document.getElementById("saveAsANSI").disabled=!1:document.getElementById("saveAsANSI").disabled=!0});let $=document.getElementById("preview-button");$.addEventListener("click",e=>{this.usePreview=!this.usePreview,this.usePreview?$.textContent="Disable":($.textContent="Enable",this.drawPreviewDisabled=!0)});let m=document.getElementById("flip-vertical");m.addEventListener("click",e=>{this.previewCtx.translate(this.previewCanvas.width,0),this.previewCtx.scale(-1,1),this.webcamCtx.translate(this.webcamCanvas.width,0),this.webcamCtx.scale(-1,1)});let p=document.getElementById("flip-horizontal");p.addEventListener("click",e=>{this.previewCtx.translate(0,this.previewCanvas.height),this.previewCtx.scale(1,-1),this.webcamCtx.translate(0,this.webcamCanvas.height),this.webcamCtx.scale(1,-1)})}updateEdgeDetection(e){this.edgeDetection=e}}function addFullscreenEvent(){let e=document.getElementById("fullscreen"),t=document.getElementById("output");e.addEventListener("click",function(){t.requestFullscreen?t.requestFullscreen():t.mozRequestFullScreen?t.mozRequestFullScreen():t.webkitRequestFullscreen?t.webkitRequestFullscreen():t.msRequestFullscreen&&t.msRequestFullscreen()})}window.addEventListener("DOMContentLoaded",e=>{var t;let i=document.getElementById("asciiWidth"),a=document.getElementById("asciiWidthValue"),s=parseInt(i.value,10);i.addEventListener("input",()=>{a.textContent=parseInt(i.value,10)});let n=document.getElementById("brightness"),l=document.getElementById("brightnessValue"),r=parseInt(n.value,10);n.addEventListener("input",()=>{l.textContent=parseInt(n.value,10)});let h=document.getElementById("contrast"),o=document.getElementById("contrastValue"),c=parseInt(h.value,10);h.addEventListener("input",()=>{o.textContent=parseInt(h.value,10)});let d=document.getElementById("saturation"),u=document.getElementById("saturationValue"),v=parseInt(d.value,10);d.addEventListener("input",()=>{u.textContent=parseInt(d.value,10)});let C=document.getElementById("hue"),g=document.getElementById("hueValue"),$=parseInt(C.value,10);C.addEventListener("input",()=>{g.textContent=parseInt(C.value,10)});let m=document.getElementById("grayscale"),p=document.getElementById("grayscaleValue"),E=parseInt(m.value,10);m.addEventListener("input",()=>{p.textContent=parseInt(m.value,10)});let _=document.getElementById("sepia"),b=document.getElementById("sepiaValue"),w=parseInt(_.value,10);_.addEventListener("input",()=>{b.textContent=parseInt(_.value,10)});let f=document.getElementById("invert"),x=document.getElementById("invertValue"),O=parseInt(f.value,10);f.addEventListener("input",()=>{x.textContent=parseInt(f.value,10)});let y=document.getElementById("spaceDensity"),L=document.getElementById("spaceDensityValue"),S=parseInt(y.value,10);y.addEventListener("input",()=>{L.textContent=parseInt(y.value,10)});let I=document.getElementById("fontSize"),D=document.getElementById("fontSizeValue"),A=parseInt(I.value,10);I.addEventListener("input",()=>{D.textContent=parseInt(I.value,10)});let B=document.getElementById("sharpness"),T=document.getElementById("sharpnessValue");B.addEventListener("input",()=>{T.textContent=B.value});let M=document.getElementById("useSharpness");M.addEventListener("change",e=>{e.target.checked?B.disabled=!1:(B.disabled=!0,B.value=9,T.textContent="9",H.updateSharpness(9))});let W=document.getElementById("edgeDetection"),R=document.getElementById("edgeDetectionValue");W.addEventListener("input",()=>{R.textContent=W.value});let k=document.getElementById("useEdgeDetection");k.addEventListener("change",e=>{e.target.checked?W.disabled=!1:(W.disabled=!0,W.value=1,R.textContent="1",H.updateEdgeDetection(1))});let F=document.getElementById("colorMode"),z=F.value,N=document.getElementById("asciiPalettes"),P=N.value,q=document.querySelectorAll(".dropdown-item");q.forEach(e=>{e.addEventListener("click",()=>{let t=e.getAttribute("data-saveas"),i=new AsciiExport("ascii-webcam-art");"txt"==t?i.saveAsTextFile(H.getAsciiArt("txt")):"html"==t?i.saveAsHtmlFile(H.getAsciiArt("html")):"ansi"==t?i.saveAsAnsiFile(H.getAsciiArt("ans")):i.saveAsImage(H.outputCanvas,t)})}),document.getElementById("savePreviewAsImage").addEventListener("click",()=>{let e=new AsciiExport("webcam-preview");e.saveAsImage(H.previewCanvas)}),document.getElementById("reset-filters").addEventListener("click",()=>{F.value="colorful",N.value="mediumset",i.value=75,D.textContent="75",I.value=10,D.textContent="10",n.value=100,l.textContent="100",h.value=100,o.textContent="100",d.value=100,u.textContent="100",C.value=0,g.textContent="0",m.value=0,p.textContent="0",_.value=0,b.textContent="0",f.value=0,x.textContent="0",y.value=0,L.textContent="0",B.value=9,B.disabled=!0,T.textContent="9",M.checked=!1,W.value=1,W.disabled=!0,R.textContent="1",k.checked=!1,H.resetEffects()}),addFullscreenEvent();let H=new WebcamToCanvas("previewCanvas","output",A,"monospace",s,P,z,r,c,v,$,E,w,O,S);new ClipboardJS(".btn-clipboard",{text:function(e){return H.getAsciiArt()}}).on("success",function(e){let t=document.getElementById("btn-clipboard");t.innerHTML="Copied!",setTimeout(function(){t.innerHTML="Copy to Clipboard"},500),e.clearSelection()})});
+    </script>
+
+</div>
+</div>
+</div>
+
+<script src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<script src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/bsadmin.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#webcamToASCII').addClass('sel');
+    });
+</script>
+
+
+<canvas style="display: none;" width="75" height="56"></canvas><iframe name="__tcfapiLocator" style="display: none;" src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/saved_resource.html"></iframe><deepl-input-controller translate="no"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div dir="ltr" style="visibility: initial !important;"><div class="dl-input-translation-container svelte-95aucy"><div></div></div></div></template></deepl-input-controller><template id="auto-clicker-autofill-popup"></template>
+<template id="auto-clicker-autofill-popup-tr"></template>
+<video autoplay="" style="display: none;"></video><canvas width="75" height="56" style="display: none;"></canvas><iframe name="__gppLocator" style="display: none;" src="./Webcam to ASCII Art_ Turn Your Stream into Art_files/saved_resource(1).html"></iframe><template id="auto-clicker-autofill-popup"></template>
+<template id="auto-clicker-autofill-popup-tr"></template>
+<video autoplay="" style="display: none;"></video><style id="publift-widget-sticky_footer-styles">
+.publift-widget-sticky_footer-container {
+  direction: ltr;
+  z-index: 2147483645;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  transition: transform .3s linear, height .3s linear;
+  overflow: hidden;
+  left: 0;
+}
+
+.publift-widget-sticky_footer-container-background {
+  background-color: #EFEFEF;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.publift-widget-sticky_footer-button {
+  width: 40px;
+  margin-left: 2px;
+  height: 20px;
+  background-color: #EFEFEF;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: none;
+  transition: top .3s linear;
+  border-radius: 0 0 2px 2px; top: 0px;
+}
+.publift-widget-sticky_footer-button :first-child, .publift-widget-sticky_footer-button :last-child  {
+  background-color: #313131;
+  width: 13px;
+  height: 3px;
+  border-radius: 2px;
+}
+.publift-widget-sticky_footer-button :first-child {
+  transform: rotate(30deg) translateX(2px);
+}
+.publift-widget-sticky_footer-button :last-child {
+  transform: rotate(-30deg) translateX(-2px);
+}
+.publift-widget-sticky_footer {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .3s linear, height .3s linear;
+  border-top: 0px solid #EFEFEF;
+  
+}
+.publift-widget-sticky_footer-container.closed {
+  height: 0px !important;
+}
+.publift-widget-sticky_footer-container.closed .publift-widget-sticky_footer-button {
+  visibility: hidden;
+  display: none;
+}
+.publift-widget-sticky_footer-container.closed .publift-widget-sticky_footer-button :first-child {
+  transform: rotate(-30deg) translateX(2px);
+}
+.publift-widget-sticky_footer-container.closed .publift-widget-sticky_footer-button :last-child {
+  transform: rotate(30deg) translateX(-2px);
+}
+
+</style><div class="publift-widget-sticky_footer-container closed" style="display: block">
+<div class="publift-widget-sticky_footer-container-background">
+</div>
+  <div class="publift-widget-sticky_footer-button">
+    <div></div>
+    <div></div>
+  </div>
+  <div class="publift-widget-sticky_footer">
+  <div id="fuse-injected-sticky_footer-1" data-fuse="sticky_footer" data-fuse-injected-at="1751058988177" class="fuse-slot-sticky" data-fuse-code="fuse-slot-sticky_footer-1" data-fuse-zone-instance="zone-instance-sticky_footer-1" data-fuse-slot="fuse-slot-sticky_footer-1" data-gpid="/71161633,22340956133/ASCIIART_asciiart/sticky_footer#single-1" data-fuse-processed-at="8012"><div id="fuse-slot-sticky_footer-1" class="fuse-slot" style="max-width: inherit; max-height: inherit;"></div></div></div>
+</div><style id="publift-fuse-styles">
+    .fuse-slot-scroll-to-stick .fuse-slot {
+      z-index: 9999;
+      top: 0px;
+      position: fixed;
+      width: 100%;
+      pointer-events: auto;
+    }
+    .publift-widget-interscroller {
+      top: 0px;
+    }</style></body></html>
